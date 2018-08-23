@@ -1,0 +1,14 @@
+{
+    "python.formatting.provider": "autopep8",
+
+    "saveAndRun": {
+        "commands": [
+            {
+                "match": "demo\\.py$",
+                "cmd": "cp ${file} E:\\code.py",
+                "useShortcut": false,
+                "silent": false
+            }
+        ]
+    }
+}

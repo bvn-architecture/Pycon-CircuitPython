@@ -1,0 +1,46 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Integrated Terminal/Console",
+        "type": "python",
+        "request": "launch",
+        "program": "${file}",
+        "console": "integratedTerminal"
+      },
+    {
+      "name": "Attach (Remote Debug)",
+      "type": "pythonExperimental",
+      "request": "attach",
+      "port": 3000,
+      "host": "localhost"
+    },
+      {
+        "name": "Debug Main Process",
+        "type": "node",
+        "request": "launch",
+        "cwd": "${workspaceRoot}",
+        "runtimeExecutable": "${workspaceRoot}/Electron_App/node_modules/.bin/electron",
+        "windows": {
+          "runtimeExecutable": "${workspaceRoot}/Electron_App/node_modules/.bin/electron.cmd"
+        },
+        "program": "${workspaceRoot}/Electron_App/main.js",
+        "protocol": "inspector",
+        "console": "integratedTerminal"
+      },
+      {
+        "name": "Debug Renderer Process",
+        "type": "chrome",
+        "request": "launch",
+        "runtimeExecutable": "${workspaceRoot}/Electron_App/node_modules/.bin/electron",
+        "windows": {
+          "runtimeExecutable": "${workspaceRoot}/Electron_App/node_modules/.bin/electron.cmd"
+        },
+        "runtimeArgs": [
+          "${workspaceRoot}/Electron_App/main.js",
+          "--remote-debugging-port=9222"
+        ],
+        "webRoot": "${workspaceRoot}"
+      }
+    ]
+  }
